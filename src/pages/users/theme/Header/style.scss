@@ -1,0 +1,25 @@
+@use "sass:map";
+@use "../../theme/_theme" as *; 
+
+
+
+
+.header_top{
+    background: rgba(2, 245, 35, 0.534);
+}
+.header_top_right{
+    background: rgba(224, 224, 235, 0.979);
+    display: flex;
+    justify-content: end;
+    ul{
+        display: flex;
+        column-gap: 5px;
+        list-style: none;
+   
+    a{
+        font-size: 14px;
+        max-width: 50%;
+        color: map.get($theme-color,"normal-text" );
+    }
+}
+}
