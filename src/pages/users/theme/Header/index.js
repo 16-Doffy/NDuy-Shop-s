@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import { format } from "../../../../utils/fomat";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { ROUTERS } from "../../../../utils/router";
+import { IoMdMailUnread } from "react-icons/io";
 const Header = () => {
   const [menu, setStatus] = useState([
     { name: "Trang chủ", path: ROUTERS.USER.HOME, },
@@ -74,7 +75,7 @@ const Header = () => {
                 </li>
                 <li>
                   <Link to={""}>
-                    <BsFillThreadsFill />
+                  <IoMdMailUnread />
                   </Link>
                 </li>
                 <span className="login"> Đăng nhập</span>
