@@ -1,7 +1,7 @@
 // contain all css
 @use "sass:map";
 @import "theme";
-
+@import "responsive";
 html,
 body{
     margin: 0;
@@ -30,3 +30,28 @@ body{
 }
 
 //nhúng sass
+
+@include Responsive($MEDIUM_DEVICE){
+    .col-lg-3{
+        flex: 0 0 25%;
+        max-width: 25%;
+        background: red;
+    }
+}
+
+@include Responsive($SMALL_DEVICES){
+
+}
+
+@include Responsive($DESKTOP){
+    .col-xl-3{
+        flex: 0 0 25%;
+        max-width: 25%;
+       
+    }
+    .col-xl-6{
+        flex: 0 0 50%;
+        max-width: 50%;
+       
+    }
+}

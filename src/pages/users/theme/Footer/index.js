@@ -1,11 +1,17 @@
 import { memo } from "react";
+
 const Footer = () => {
   return (
-    <>
-     
-      
-      <h1>Footer</h1>
-    </>
+    <footer className="footer">
+      <div className="container">
+        <div className="col-lg-3"></div>
+        <div className="col-lg-3"></div>
+        <div className="col-lg-3"></div>
+        <div className="col-lg-3"></div>
+      </div>
+      <div>sdasdsaads</div>
+    </footer>
   );
 };
+
 export default memo(Footer);
