@@ -38,8 +38,30 @@ body{
     max-width: 50%;
 }
 
+.button-submit{
+    font-size: 14px;
+    color: white;
+    font-weight: 800;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 16px 30px 17px;
+    background: #5500f3;
+    border: none;
+    height: 100%;
+}
 //nhúng sass
-
+// @include Responsive($TABLET_DEVICE){
+//     .col-md-6{
+//         flex: 0 0 50%;
+//         max-width: 50%;
+       
+//     }
+//     .col-md-12{
+//         flex: 0 0 100%;
+//         max-width: 100%;
+       
+//     }
+// }
 @include Responsive($MEDIUM_DEVICE){
     .col-lg-3{
         flex: 0 0 25%;
@@ -63,4 +85,5 @@ body{
         max-width: 50%;
        
     }
+
 }

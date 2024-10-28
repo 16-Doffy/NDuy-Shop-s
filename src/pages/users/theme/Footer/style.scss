@@ -1,4 +1,6 @@
 .footer{
+    padding-top: 70px;
+    padding-bottom: 0;
     .footer_about{
         margin-bottom: 30px;
 
@@ -13,7 +15,84 @@
         list-style: none;
     }
     }
+    .footer_widget{
+        margin-bottom: 30px;
+        overflow: hidden; //noi dung
+        h6{
+            color: blueviolet;
+            margin-bottom: 10px;
+            font-size: 16px;
+            font-weight: 700;
+        }
+        ul {
+            float: left;
+            width: 50%; // nhieu se dc dua
+            li{
+                list-style: none;
+                a{
+                    color: blueviolet;
+                    font-size: 14px;
+                    line-height: 32px;
+                    text-decoration: none; //delete "_"
+                }
+            } 
+        }
 
-  
+        p{
+            font-size: 14px;
+            color: purple;
+            margin-bottom: 30px;
+        }
+        form{
+            font-size: 14px;
 
+     .input-group{
+        display: flex;
+        align-items: center;
+            input{
+                width: 100%;
+                font-size: 16px;
+                padding-left: 20px;
+                color: purple;
+                height: 46px;
+                border: 1px solid;
+
+                ::placeholder{
+                    color: purple;
+                }
+            }
+            button{
+                padding: 0 26px;
+                height: 46px;
+                min-width: max-content;
+            }
+        }
+        }
+    }
+    .footer_widget_social{
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+
+        div{
+           
+            :hover{
+                background: blue($color: #0081fa);
+                color: #ffff;
+            }
+            
+            svg{
+                font-size: 20ppx;
+                padding: 10px;
+                color: #404040;
+                border: 1px solid #ededed;
+                border-radius: 50%;
+                transition: all,0,3s;
+                background: #0094f7;
+                padding-bottom: 10px;
+            }
+        }
+    }
 }
+
+

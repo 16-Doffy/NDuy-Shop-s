@@ -11,10 +11,12 @@ import { format } from "../../../../utils/fomat";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { ROUTERS } from "../../../../utils/router";
 import { IoMdMailUnread } from "react-icons/io";
+import { MdRestaurantMenu } from "react-icons/md";
 const Header = () => {
-  const [menu, setStatus] = useState([
-    { name: "Trang chủ", path: ROUTERS.USER.HOME, },
-    { name: "Cửa hàng", path: ROUTERS.USER.PRODUCT, },
+  const[isShowCaterogy,setIsShowCaterogyset] =useState(true);
+  const [menu] = useState([
+    { name: "Trang chủ", path: ROUTERS.USER.HOME },
+    { name: "Cửa hàng", path: ROUTERS.USER.PRODUCT },
     {
       name: "Sản Phẩm",
       path: "",
@@ -75,7 +77,7 @@ const Header = () => {
                 </li>
                 <li>
                   <Link to={""}>
-                  <IoMdMailUnread />
+                    <IoMdMailUnread />
                   </Link>
                 </li>
                 <span className="login"> Đăng nhập</span>
@@ -95,23 +97,17 @@ const Header = () => {
             <nav className="header__menu">
               <ul>
                 {menu?.map((menu, menuKey) => (
-                  <li key={menuKey} className={menuKey === 0 ? "active" :""}>
+                  <li key={menuKey} className={menuKey === 0 ? "active" : ""}>
                     <Link to={menu?.path}>{menu?.name}</Link>
-                    {
-                      menu.child && (
-                        <ul className="header_menu_dropdown">
-                          {
-                            menu.child.map((childItem,childKey) => (
-                              <li key={`${menuKey}-${childKey}`}>
-                              <Link to={childItem.path}> {childItem.name}
-                              </Link>
-                            </li>
-                            ))
-                          }
-                         
-                        </ul>
-                      )
-                    }
+                    {menu.child && (
+                      <ul className="header_menu_dropdown">
+                        {menu.child.map((childItem, childKey) => (
+                          <li key={`${menuKey}-${childKey}`}>
+                            <Link to={childItem.path}> {childItem.name}</Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -131,6 +127,36 @@ const Header = () => {
               </ul>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="container">
+        <div className="row hero_categroty_container">
+          <div className="col-lg-3 hero_categroty">
+            <div className="hero_categroty_all" onClick={() => setIsShowCaterogyset(!isShowCaterogy)}>
+              <MdRestaurantMenu />
+              Danh sách sản phẩm
+            </div>
+            {isShowCaterogy && ( 
+            <ul className={isShowCaterogy? "" : "hidden"}>
+              <li>
+                <Link to={"#"}>Thịt tươi</Link>
+              </li>
+
+              <li>
+                <Link to={"#"}>Rau củ</Link>
+              </li>
+
+              <li>
+                <Link to={"#"}>Nước trái cây</Link>
+              </li>
+
+              <li>
+                <Link to={"#"}>Trái cây</Link>
+              </li>
+            </ul>
+          )}
+          </div>
+          <div className="col-lg-9 "></div>
         </div>
       </div>
     </>
