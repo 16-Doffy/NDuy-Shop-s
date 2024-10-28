@@ -12,8 +12,9 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { ROUTERS } from "../../../../utils/router";
 import { IoMdMailUnread } from "react-icons/io";
 import { MdRestaurantMenu } from "react-icons/md";
+import { FaPhoneSquareAlt, FaPhoneVolume } from "react-icons/fa";
 const Header = () => {
-  const[isShowCaterogy,setIsShowCaterogyset] =useState(true);
+  const [isShowCaterogy, setIsShowCaterogyset] = useState(true);
   const [menu] = useState([
     { name: "Trang chủ", path: ROUTERS.USER.HOME },
     { name: "Cửa hàng", path: ROUTERS.USER.PRODUCT },
@@ -132,31 +133,75 @@ const Header = () => {
       <div className="container">
         <div className="row hero_categroty_container">
           <div className="col-lg-3 hero_categroty">
-            <div className="hero_categroty_all" onClick={() => setIsShowCaterogyset(!isShowCaterogy)}>
+            <div
+              className="hero_categroty_all"
+              onClick={() => setIsShowCaterogyset(!isShowCaterogy)}
+            >
               <MdRestaurantMenu />
               Danh sách sản phẩm
             </div>
-            {isShowCaterogy && ( 
-            <ul className={isShowCaterogy? "" : "hidden"}>
-              <li>
-                <Link to={"#"}>Thịt tươi</Link>
-              </li>
+            {isShowCaterogy && (
+              <ul className={isShowCaterogy ? "" : "hidden"}>
+                <li>
+                  <Link to={"#"}>Thịt tươi</Link>
+                </li>
 
-              <li>
-                <Link to={"#"}>Rau củ</Link>
-              </li>
+                <li>
+                  <Link to={"#"}>Rau củ</Link>
+                </li>
 
-              <li>
-                <Link to={"#"}>Nước trái cây</Link>
-              </li>
+                <li>
+                  <Link to={"#"}>Nước trái cây</Link>
+                </li>
 
-              <li>
-                <Link to={"#"}>Trái cây</Link>
-              </li>
-            </ul>
-          )}
+                <li>
+                  <Link to={"#"}>Trái cây</Link>
+                </li>
+              </ul>
+            )}
           </div>
-          <div className="col-lg-9 "></div>
+          <div className="col-lg-9 hero_search_container">
+            <div className="hero_search_">
+              <div className="hero_search_form">
+                <form>
+                  <input
+                    type="text"
+                    name=""
+                    value=""
+                    placeholder="Bạn muốn tìm sản phẩm nào?"
+                  />
+                  <button type="submit"> Tìm kiếm</button>
+                </form>
+              </div>
+
+              <div className="hero_search_phone">
+                <div className="hero_search_phone_icon">
+                  <FaPhoneSquareAlt />
+                </div>
+                <div className="hero_search_phone_text">
+                  <p>08386322</p>
+                  <span>Hỗ trợ 24/7</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="hero_items">
+              <div className="hero_text">
+                <span>
+                  Trái cây tươi
+                  <h2>
+                    Rau củ quả
+                    <br />
+                    Sạch 100%
+                  </h2>
+                </span>
+                <p>Miễn phí giao hàng tận nơi</p>
+                <Link to="" className="primary-button">
+                Mua ngay
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
