@@ -12,7 +12,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { ROUTERS } from "../../../../utils/router";
 import { IoMdMailUnread } from "react-icons/io";
 import { MdRestaurantMenu } from "react-icons/md";
-import { FaPhoneSquareAlt, FaPhoneVolume } from "react-icons/fa";
+import { FaPhoneSquareAlt } from "react-icons/fa";
 const Header = () => {
   const [isShowCaterogy, setIsShowCaterogyset] = useState(true);
   const [menu] = useState([

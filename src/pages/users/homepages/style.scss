@@ -1,0 +1,38 @@
+.container_categories_slider {
+  max-width: 1200px;
+  margin-top: 30px;
+  background-color: red($color: #000000);
+  .categories_slider {
+    .categories_slider_item {
+      height: 300px;
+      position: relative;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: top center;
+      border-radius: 5px;
+      p{
+        position: absolute;
+        left:5%;
+        bottom: 20px;
+        text-align: center;
+        background: rgb(153, 233, 209);
+        font-size: 18px;
+        color: #200aeb;
+        font-weight: 1000;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        padding: 12px 0 10px;
+        width: 270px;
+        cursor: pointer;
+        :hover{
+            background: #03021d;
+
+        }
+    }
+    }
+    .react-multi-carousel-item :not(:first-child):not(:last-child){
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+  }
+}

@@ -78,7 +78,7 @@ const Footer = () => {
             </form>
           </div>
         </div>
-        <div className="col-lg-3">4</div>
+
         </div>
       </div>
       
