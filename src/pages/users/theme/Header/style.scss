@@ -326,3 +326,32 @@
     }
   }
 }
+// Định nghĩa biến
+$TABLET_DEVICE: 768px;
+
+// Định nghĩa mixin
+@mixin Responsive($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+// Sử dụng mixin
+@include Responsive($TABLET_DEVICE) {
+  .header_top,
+  .header__menu,
+  .header_cart {
+    display: none;
+  }
+  .humber_open{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    svg{
+      font-size: 320px;
+      color: #090053;
+    }
+  }
+}
+

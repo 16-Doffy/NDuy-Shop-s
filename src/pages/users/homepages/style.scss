@@ -10,9 +10,9 @@
       background-size: cover;
       background-position: top center;
       border-radius: 5px;
-      p{
+      p {
         position: absolute;
-        left:5%;
+        left: 5%;
         bottom: 20px;
         text-align: center;
         background: rgb(153, 233, 209);
@@ -24,15 +24,85 @@
         padding: 12px 0 10px;
         width: 270px;
         cursor: pointer;
-        :hover{
-            background: #03021d;
-
+        :hover {
+          background: #03021d;
         }
+      }
     }
-    }
-    .react-multi-carousel-item :not(:first-child):not(:last-child){
-        margin-left: 5px;
-        margin-right: 5px;
+    .react-multi-carousel-item :not(:first-child):not(:last-child) {
+      margin-left: 5px;
+      margin-right: 5px;
     }
   }
 }
+
+.featured {
+  margin-top: 50px;
+  .section-title{
+    margin-bottom: 50px;
+    text-align: center;
+    h2 {
+      position: relative;
+    }
+    h2:after {
+        position: absolute;
+        left:0;
+        bottom: -15px;
+        right: 0;
+        height: 4px;
+        width: 80px;
+        background: #200aeb;
+        content: "";
+        margin: 0 auto;
+    }
+  }
+}
+.product-grid {
+    display: grid; /* Sử dụng grid để chia cột */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Chia thành cột với kích thước tối thiểu là 200px */
+    gap: 16px; /* Khoảng cách giữa các sản phẩm */
+  }
+  
+  .product-item {
+    border: 1px solid #ccc; /* Viền cho mỗi sản phẩm */
+    padding: 10px; /* Padding cho mỗi sản phẩm */
+    text-align: center; /* Canh giữa nội dung */
+  }
+  
+  
+  .product-item img {
+    width: 100%; /* Chiều rộng của ảnh bằng 100% chiều rộng của sản phẩm */
+    height: 150px; /* Chiều cao cố định cho ảnh */
+    object-fit: cover; /* Cắt ảnh để giữ tỉ lệ */
+    border-radius: 8px; /* Bo góc cho ảnh */
+  }
+  
+  .product-item:hover {
+    transform: scale(1.05); /* Phóng to khi hover */
+  }
+
+  .tab_name {
+    list-style-type:none;
+    display: flex; /* Sử dụng flexbox để tạo bố cục hàng ngang */
+    justify-content: center; /* Phân bổ không gian đều giữa các tab */
+    margin-bottom: 20px; /* Khoảng trống phía dưới TabList */
+  }
+  
+  .tab_name .react-tabs__tab {
+    margin: 0 10px; /* Khoảng cách bên trái và bên phải của mỗi tab */
+    padding: 10px 15px; /* Padding cho từng tab */
+    cursor: pointer; /* Con trỏ khi hover vào tab */
+    border-radius: 5px; /* Bo tròn góc cho tab */
+    background: #f0f0f0; /* Màu nền cho tab */
+    transition:  0.3s; /* Hiệu ứng chuyển đổi khi hover */
+  }
+  
+  .tab_name .react-tabs__tab:hover {
+    background: #e0e0e0; /* Màu nền khi hover */
+  }
+  
+  .tab_name .react-tabs__tab--selected {
+    background: #d0d0d0; /* Màu nền cho tab được chọn */
+    font-weight: bold; /* Đậm cho tab được chọn */
+  }
+  

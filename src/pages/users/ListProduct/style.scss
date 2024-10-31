@@ -1,0 +1,80 @@
+.container {
+    padding: 30px 0;
+  
+    .sidebar {
+      padding-right: 20px;
+  
+      .sidebar_item {
+        margin-bottom: 20px;
+  
+        h2 {
+          color: #75bff0;
+          font-weight: 700;
+          margin-bottom: 10px;
+        }
+  
+        .price-range_wrap {
+          display: flex;
+          flex-direction: column;
+          row-gap: 10px;
+  
+          .tu,
+          .den {
+            p {
+              color: #75bff0;
+              font-weight: 700;
+              margin-bottom: 10px;
+            }
+          }
+        }
+  
+        .tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+  
+          .tag {
+            font-size: 12px;
+            color: #0c0b0c;
+            display: inline-block;
+            padding: 8px 25px 6px;
+            cursor: pointer;
+            background: #87cff8;
+            margin-bottom: 0;
+  
+            &:hover{
+                color: #0b7c80;
+            }
+           
+          }
+        }
+  
+        .input,
+        textarea {
+          width: 100%;
+          height: 35px;
+          border: 1px solid;
+          padding-left: 10px;
+          font-size: 14px;
+          color: #75bff0;
+          border-radius: 3px;
+  
+          &:hover {
+            outline: none;
+          }
+        }
+      }
+      ul li{
+        list-style: none;
+        a{
+            text-decoration: none;
+            line-height: 30px;
+            background: #75bff0;
+            &:hover{
+                background: #0f4e03;
+            }
+        }
+      }
+    }
+  }
+  

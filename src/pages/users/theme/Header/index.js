@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import "./style.scss";
 import {
   BsChatRightHeartFill,
@@ -6,15 +6,25 @@ import {
   BsFillThreadsFill,
   BsInstagram,
 } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { format } from "../../../../utils/fomat";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { ROUTERS } from "../../../../utils/router";
 import { IoMdMailUnread } from "react-icons/io";
 import { MdRestaurantMenu } from "react-icons/md";
 import { FaPhoneSquareAlt } from "react-icons/fa";
-const Header = () => {
-  const [isShowCaterogy, setIsShowCaterogyset] = useState(true);
+export const categrories = [
+  "Thịt tươi",
+  "Rau củ",
+  "Nước trái cây",
+  "Trái cây",
+  "Hải sản",
+];
+const Header = () => {  
+  const location = useLocation();
+  const [isHome, setIshome] = useState(location.pathname.length <= 1);
+  const [isShowCaterogy, setIsShowCaterogyset] = useState(isHome);
+
   const [menu] = useState([
     { name: "Trang chủ", path: ROUTERS.USER.HOME },
     { name: "Cửa hàng", path: ROUTERS.USER.PRODUCT },
@@ -45,6 +55,12 @@ const Header = () => {
     { name: "Liên hệ", path: "" },
   ]);
 
+
+  useEffect(() =>{
+    const isHome = location.pathname.length <=1;
+    setIshome(isHome);
+    setIsShowCaterogyset(isHome);
+  },[location]);
   return (
     <>
       <div className="header_top">
@@ -89,12 +105,12 @@ const Header = () => {
       </div>
       <div className="container">
         <div className="row">
-          <div className="col-xl-3 ">
+          <div className="col-lg-3 ">
             <div className="header_logo">
               <h1>Doffy Shop's</h1>
             </div>
           </div>
-          <div className="col-xl-6 ">
+          <div className="col-lg-6 ">
             <nav className="header__menu">
               <ul>
                 {menu?.map((menu, menuKey) => (
@@ -114,7 +130,7 @@ const Header = () => {
               </ul>
             </nav>
           </div>
-          <div className="col-xl-3 ">
+          <div className="col-xlg-3 ">
             <div className="header_cart">
               <div className="header_cart_price">
                 <span>{format(1236789)}</span>
@@ -142,21 +158,11 @@ const Header = () => {
             </div>
             {isShowCaterogy && (
               <ul className={isShowCaterogy ? "" : "hidden"}>
-                <li>
-                  <Link to={"#"}>Thịt tươi</Link>
-                </li>
-
-                <li>
-                  <Link to={"#"}>Rau củ</Link>
-                </li>
-
-                <li>
-                  <Link to={"#"}>Nước trái cây</Link>
-                </li>
-
-                <li>
-                  <Link to={"#"}>Trái cây</Link>
-                </li>
+                {categrories.map((categrories, key) => (
+                  <li key={key}>
+                    <Link to={ROUTERS.USER.PRODUCT}>{categrories}</Link>
+                  </li>
+                ))}
               </ul>
             )}
           </div>
@@ -185,22 +191,24 @@ const Header = () => {
               </div>
             </div>
 
-            <div className="hero_items">
-              <div className="hero_text">
-                <span>
-                  Trái cây tươi
-                  <h2>
-                    Rau củ quả
-                    <br />
-                    Sạch 100%
-                  </h2>
-                </span>
-                <p>Miễn phí giao hàng tận nơi</p>
-                <Link to="" className="primary-button">
-                Mua ngay
-                </Link>
+            {isHome && (
+              <div className="hero_items">
+                <div className="hero_text">
+                  <span>
+                    Trái cây tươi
+                    <h2>
+                      Rau củ quả
+                      <br />
+                      Sạch 100%
+                    </h2>
+                  </span>
+                  <p>Miễn phí giao hàng tận nơi</p>
+                  <Link to="" className="primary-button">
+                    Mua ngay
+                  </Link>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>

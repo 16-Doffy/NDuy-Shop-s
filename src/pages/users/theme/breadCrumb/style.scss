@@ -1,0 +1,39 @@
+.breadcrumb{
+    display: flex;
+    align-items: center;
+    padding: 45px 0px 40px;
+    justify-content: center;
+    text-align: center;
+    line-height: 30px;
+    background: #75bff0;
+    .breadcrumb_text{
+        color: white;
+        h2{
+            margin-bottom: 10px;
+        }
+        ul{
+            display: flex;
+            list-style: none;
+            column-gap: 10px;
+        
+        li{
+
+            text-decoration: underline;
+            color: #051df7;
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        &.Link{
+            text-decoration: none;
+            :hover{
+            color: #75bff0;
+            }
+        }
+        }
+    }
+    .breadcrumb_option{
+
+    }
+}
+}
