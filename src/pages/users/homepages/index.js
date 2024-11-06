@@ -3,7 +3,10 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Tabs, TabList, Tab, TabPanel } from 'react-tabs'; 
 import "./style.scss";
+import ProductCart from "../ProductCard";
+// import hq from "../../../asset/anh/images/hq.jpg";
 
+// Nếu ProductCard nằm trong src/components
 const HomePage = () => {
   const [activeTab, setActiveTab] = useState(0); // Trạng thái cho tab hiện tại
 
@@ -48,7 +51,20 @@ const HomePage = () => {
       { img: "/categories/xoai.jpg", name: "Xoài" ,price:29000},
     ],
   };
-
+ const renderFeaturedProduct =(data) =>{
+  Object.keys(data).forEach((key,index) =>{
+    TabList.push(<Tab key={index}>{data[key].title}</Tab>);
+    const TabPanel =[];
+    data[key].product.forEach((item,j) =>{
+      TabPanel.push(
+        <div className="col-lg-3 col-md-4 col-sm-6 col-sx-12" key={j}>
+          <ProductCart name={item.name} img={item.img} price={item.price}/>
+        </div>
+      );
+    });
+    TabPanel.push(TabPanel);
+  });
+ }
   return (
     <>
       {/*Categories begin*/}
@@ -90,7 +106,7 @@ const HomePage = () => {
           </div>
           <div
             className="categories_slider_item"
-            style={{ backgroundImage: `url(/categories/ep tao.jpg)` }} // Absolute path
+            style={{ backgroundImage: `url(/categories/eptao.jpg)` }} // Absolute path
           >
             <p>Táo xanh </p>
           </div>

@@ -1,25 +1,19 @@
 import { Route, Routes } from "react-router-dom";
 import Homepages from "./pages/users/homepages";
-import { ROUTERS } from "./utils/router";
-import MasterLayout from "./pages/users/theme/masterLayout";
 import Profile from "./pages/users/Profile";
 import ListProduct from "./pages/users/ListProduct";
+import { ROUTERS } from "./utils/router";
+import MasterLayout from "./pages/users/theme/masterLayout";
+import DetailPage from "./pages/users/DetailPage";
 
 const renderUserRouter = () => {
   const userRouters = [
-    {
-      path: ROUTERS.USER.HOME,
-      component: <Homepages />,
-    },
-    {
-      path: ROUTERS.USER.PROFILE,
-      component: <Profile />,
-    },
-    {
-      path: ROUTERS.USER.PRODUCT,
-      component: <ListProduct />,
-    },
+    { path: ROUTERS.USER.HOME, component: <Homepages /> },
+    { path: ROUTERS.USER.PROFILE, component: <Profile /> },
+    { path: ROUTERS.USER.PRODUCT, component: <ListProduct /> },
+    { path: ROUTERS.USER.DETAILPRODUCT, component: <DetailPage /> },
   ];
+
   return (
     <MasterLayout>
       <Routes>
@@ -34,4 +28,5 @@ const renderUserRouter = () => {
 const RouterCustom = () => {
   return renderUserRouter();
 };
+
 export default RouterCustom;

@@ -3,5 +3,6 @@ export const ROUTERS = {
         HOME:"",
         PROFILE:"profile",
         PRODUCT:"product",
+        DETAILPRODUCT:"/product/product/chi-tiet/:id",
     },
 };
