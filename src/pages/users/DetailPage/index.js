@@ -7,6 +7,8 @@ import q3 from "../../../asset/anh/images/xoai.jpg";
 import { AiOutlineCopy, AiOutlineEye } from "react-icons/ai";
 import { format } from "../../../utils/fomat";
 import { FaFacebook, FaInstagramSquare, FaYoutube } from "react-icons/fa";
+import { featProduct } from "../../../utils/common";
+import ProductCart from "../ProductCard";
 const DetailPage = () => {
   const imgs = [q1, q2, q3];
   return (
@@ -56,6 +58,37 @@ const DetailPage = () => {
                 </span>
               </li>
             </ul>
+          </div>
+        </div>
+        <div className="product_detail_tab">
+          <h4>Thông tin chi tiết</h4>
+
+          <div>
+            <ul>
+              <li>
+              Doffy Shop's là ngành chuyên về lĩnh vực chế biến nông sản, thực
+              phẩm; kiểm tra, đánh giá chất lượng nguyên liệu, bán thành phẩm và
+              thành phẩm trong quá trình chế biến, bảo quản thực phẩm; nghiên
+              cứu phát triển sản phẩm mới, tạo nguyên liệu mới trong lĩnh vực
+              thực phẩm, dược phẩm và hóa học.
+              </li>
+              <li>
+              Không chỉ mở chuỗi cửa hàng, Clever Food còn vô cùng nắm bắt xu 
+              hướng của thời đại khi mở ra dịch vụ tư vấn mua thực phẩm sạch online và đặt giao hàng tận nơi,
+               cùng với đó là dịch vụ sơ chế thực phẩm có sẵn đối với những chị em bận rộn.
+              </li>
+            </ul>
+          </div>
+
+          <div className="section-title">
+            <h2>Sản phẩm tương tự</h2>
+          </div>
+          <div className="row">
+            {featProduct.all.product.map((item, key) => (
+              <div key={key} className="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <ProductCart  img={item.img} name={item.name} price={item.price} />
+              </div>
+            ))}
           </div>
         </div>
       </div>
