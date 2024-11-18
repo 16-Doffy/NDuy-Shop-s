@@ -9,6 +9,7 @@ import { format } from "../../../utils/fomat";
 import { FaFacebook, FaInstagramSquare, FaYoutube } from "react-icons/fa";
 import { featProduct } from "../../../utils/common";
 import ProductCart from "../ProductCard";
+import Quantity from "../Quantity";
 const DetailPage = () => {
   const imgs = [q1, q2, q3];
   return (
@@ -38,6 +39,10 @@ const DetailPage = () => {
               cứu phát triển sản phẩm mới, tạo nguyên liệu mới trong lĩnh vực
               thực phẩm, dược phẩm và hóa học.
             </p>
+
+                <Quantity/>
+
+
             <ul>
               <li>
                 <b>Tình trạng: </b> <span>Hết hàng</span>

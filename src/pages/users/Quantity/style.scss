@@ -1,0 +1,32 @@
+.quantity-container{
+    color: blue($color: #6ba6f3);
+    display: flex;
+    gap: 20px;
+    .quantity{
+        display: flex;
+        align-items: center;
+
+        span{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+        }
+        .qtybtn,input{
+            width: 45px;
+            background: white;
+            height: 32px;
+        }
+        input{
+            border: unset;
+            border-radius: 0;
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button{
+                -webkit-appearance: none;
+                margin: 0;
+            }
+        }
+    }
+}

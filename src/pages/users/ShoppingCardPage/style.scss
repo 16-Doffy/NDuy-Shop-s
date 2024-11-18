@@ -1,0 +1,52 @@
+.table_cart {
+  overflow-y: auto;
+
+  table {
+    width: 100%;
+
+    thead tr th {
+      text-align: start;
+    }
+
+    td,
+    th {
+      padding: 20px 0;
+      border-bottom: 1px solid white;
+    }
+
+    .shopping_cart_item {
+      display: flex;
+      align-items: center;
+      column-gap: 20px;
+
+      img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      h4 {
+        font-size: 16px;
+        font-weight: 500;
+      }
+    }
+
+    .icon_close {
+      cursor: pointer;
+
+      svg {
+        transform: rotate(0deg);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      &:hover {
+        color: red;
+
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
