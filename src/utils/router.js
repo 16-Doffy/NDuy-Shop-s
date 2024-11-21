@@ -7,5 +7,6 @@ export const ROUTERS = {
         PRODUCT:"product",
         DETAILPRODUCT:"/product/product/chi-tiet/:id",
         SHOPPING_CARD:"/gio-hang",
+        CHECKOUT:"/thanh-toan",
     },
 };

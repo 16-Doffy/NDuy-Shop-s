@@ -6,6 +6,7 @@ import { ROUTERS } from "./utils/router";
 import MasterLayout from "./pages/users/theme/masterLayout";
 import DetailPage from "./pages/users/DetailPage";
 import ShoppingCardPage from "./pages/users/ShoppingCardPage";
+import Checkout from "./pages/users/Checkout";
 
 const renderUserRouter = () => {
   const userRouters = [
@@ -14,6 +15,7 @@ const renderUserRouter = () => {
     { path: ROUTERS.USER.PRODUCT, component: <ListProduct /> },
     { path: ROUTERS.USER.DETAILPRODUCT, component: <DetailPage /> },
     { path: ROUTERS.USER.SHOPPING_CARD, component: <ShoppingCardPage /> },
+    { path: ROUTERS.USER.CHECKOUT, component: <Checkout /> },
   ];
 
   return (
